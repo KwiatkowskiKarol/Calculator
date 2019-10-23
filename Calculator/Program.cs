@@ -8,6 +8,7 @@ namespace Calculator
 {
     class Program
     {
+        static decimal result; 
         static void Main(string[] args)
         {
             Console.WriteLine("Enter first number: ");
@@ -16,61 +17,19 @@ namespace Calculator
             Console.WriteLine("Enter second number: ");
             String secondNumberString = Console.ReadLine();
 
-            AddNumbers(firstNumberString, secondNumberString);
+            result = Calculator.AddNumbers(firstNumberString, secondNumberString);
+            Console.WriteLine("Add: " + result);
+
+            result = Calculator.SubtractNumbers(firstNumberString, secondNumberString);
+            Console.WriteLine("Sub: " + result);
+
+            result = Calculator.DivideNumbers(firstNumberString, secondNumberString);
+            Console.WriteLine("Div: " + result);
+             
+            result = Calculator.MultiplyNumbers(firstNumberString, secondNumberString);
+            Console.WriteLine("Mul: " + result);
 
             Console.ReadLine();
-        }
-
-        static Decimal AddNumbers(String firstNumberString, String secondNumberString)
-        {
-            decimal firstNumber = 0;
-            decimal secondNumber = 0;
-            decimal result = 0;
-
-            if (Decimal.TryParse(firstNumberString, out firstNumber) & Decimal.TryParse(secondNumberString, out secondNumber))
-            {
-                result = firstNumber + secondNumber;
-            }
-            return result;
-        }
-
-        static Decimal SubstractNumbers(String firstNumberString, String secondNumberString)
-        {
-            decimal firstNumber = 0;
-            decimal secondNumber = 0;
-            decimal result = 0;
-
-            if (Decimal.TryParse(firstNumberString, out firstNumber) || Decimal.TryParse(secondNumberString, out secondNumber))
-            {
-                result = firstNumber - secondNumber;
-            }
-            return result;
-        }
-
-        static Decimal DivideNumbers(String firstNumberString, String secondNumberString)
-        {
-            decimal firstNumber = 0;
-            decimal secondNumber = 0;
-            decimal result = 0;
-
-            if (Decimal.TryParse(firstNumberString, out firstNumber) || Decimal.TryParse(secondNumberString, out secondNumber))
-            {
-                result = firstNumber / secondNumber;
-            }
-            return result;
-        }
-
-        static Decimal MultiplicateNumbers(String firstNumberString, String secondNumberString)
-        {
-            decimal firstNumber = 0;
-            decimal secondNumber = 0;
-            decimal result = 0;
-
-            if (Decimal.TryParse(firstNumberString, out firstNumber) || Decimal.TryParse(secondNumberString, out secondNumber))
-            {
-                result = firstNumber * secondNumber;
-            }
-            return result;
         }
 
     }
